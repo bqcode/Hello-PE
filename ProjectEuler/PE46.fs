@@ -21,7 +21,7 @@ let checkOdd (primes : bool []) odd =
 
 
 let solve n =
-    let primes = Common.getPrimes n
+    let primes = Common.getPrimesSieve n
     let oddNums = seq { for i in 9..2..n do if not primes.[i] then yield i }
     System.Threading.Tasks.Parallel.ForEach(oddNums,
         (fun odd -> 

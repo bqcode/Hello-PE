@@ -44,6 +44,7 @@
     <Compile Include="PE46.fs" />
     <Compile Include="PE47.fs" />
     <Compile Include="PE49.fs" />
+    <Compile Include="PE51.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />

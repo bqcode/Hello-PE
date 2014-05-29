@@ -9,6 +9,6 @@ let solve n =
         | (e, x)::xs,_,_,_ ->
             if x = y && x = what then find4 xs x elem (cnt+1)
             else find4 xs x e 1
-    let primes = Common.getPrimes (int (sqrt <| float n)) |> Common.toPrimes
-    let uniqueFactors = Array.Parallel.map (fun x -> (x, Common.factorize primes x |> Common.unique |> List.length)) [|1..n|] |> Array.toList
+    let primes = Common.getPrimesSieve (int (sqrt <| float n)) |> Common.toPrimes
+    let uniqueFactors = Array.Parallel.map (fun x -> (x, Common.factorize primes x |> Common.getUniqueElements |> List.length)) [|1..n|] |> Array.toList
     find4 uniqueFactors -1 -1 0
