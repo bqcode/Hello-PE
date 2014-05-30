@@ -4,10 +4,9 @@
 [<EntryPoint>]
 let main argv = 
     let sw = System.Diagnostics.Stopwatch.StartNew()
-    let sol = PE51.solve 10000000
+    let sol = PE51.solve 2 1000000
     sw.Stop()
-    //sol.ToArray() |> Array.iter (printfn "%A")
-    printfn "Len = %d" <| Array.length sol
+    printfn "Sol = %A" sol
     printfn "Time taken = %s" <| sw.Elapsed.ToString()
     stdin.ReadLine() |> ignore
     0 // return an integer exit code

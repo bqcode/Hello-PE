@@ -67,6 +67,18 @@ let getPermutations n =
         |> Array.toList
     backtrac isSolution processSolution generateCandidates n
 
+let getSubsets n =
+    let res = System.Collections.Generic.List<bool list>()
+    let isSolution _ k n = k = n
+    let processSolution vec _ _ =
+        vec
+        |> List.rev
+        |> res.Add
+    let generateCandidates _ _ _ =
+        [true;false]
+    backtrac isSolution processSolution generateCandidates n
+    res.ToArray()
+
 /// Checks whether all elements in the list are the same
 let allElementsAreSame xs = 
     List.fold (fun (x,b) y -> if x <> y then (y, true) else (y, false || b)) (List.head xs, false) xs
