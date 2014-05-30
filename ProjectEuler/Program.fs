@@ -4,7 +4,7 @@
 [<EntryPoint>]
 let main argv = 
     let sw = System.Diagnostics.Stopwatch.StartNew()
-    let sol = PE51.solve 2 1000000
+    let sol = PE54.deckOfCards
     sw.Stop()
     printfn "Sol = %A" sol
     printfn "Time taken = %s" <| sw.Elapsed.ToString()
